@@ -28,6 +28,7 @@ module Prestashop
         url = 'http://' + url
         url << '/' unless url.end_with? '/'
         url << 'api/' unless url.end_with? 'api/'
+        url << "?&ws_key=#{api_key}" # Weird prestashop keeps returning 401 for normal basic auth we have to append this
         @api_url = url
       end
 
